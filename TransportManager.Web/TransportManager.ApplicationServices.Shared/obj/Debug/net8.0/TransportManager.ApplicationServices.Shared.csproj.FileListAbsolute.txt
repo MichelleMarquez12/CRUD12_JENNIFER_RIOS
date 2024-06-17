@@ -1,0 +1,12 @@
+C:\Users\marqu\source\repos\CRUD12_JENNIFER_RIOS\TransportManager.Web\TransportManager.ApplicationServices.Shared\bin\Debug\net8.0\TransportManager.ApplicationServices.Shared.deps.json
+C:\Users\marqu\source\repos\CRUD12_JENNIFER_RIOS\TransportManager.Web\TransportManager.ApplicationServices.Shared\bin\Debug\net8.0\TransportManager.ApplicationServices.Shared.dll
+C:\Users\marqu\source\repos\CRUD12_JENNIFER_RIOS\TransportManager.Web\TransportManager.ApplicationServices.Shared\bin\Debug\net8.0\TransportManager.ApplicationServices.Shared.pdb
+C:\Users\marqu\source\repos\CRUD12_JENNIFER_RIOS\TransportManager.Web\TransportManager.ApplicationServices.Shared\obj\Debug\net8.0\TransportManager.ApplicationServices.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\marqu\source\repos\CRUD12_JENNIFER_RIOS\TransportManager.Web\TransportManager.ApplicationServices.Shared\obj\Debug\net8.0\TransportManager.ApplicationServices.Shared.AssemblyInfoInputs.cache
+C:\Users\marqu\source\repos\CRUD12_JENNIFER_RIOS\TransportManager.Web\TransportManager.ApplicationServices.Shared\obj\Debug\net8.0\TransportManager.ApplicationServices.Shared.AssemblyInfo.cs
+C:\Users\marqu\source\repos\CRUD12_JENNIFER_RIOS\TransportManager.Web\TransportManager.ApplicationServices.Shared\obj\Debug\net8.0\TransportManager.ApplicationServices.Shared.csproj.CoreCompileInputs.cache
+C:\Users\marqu\source\repos\CRUD12_JENNIFER_RIOS\TransportManager.Web\TransportManager.ApplicationServices.Shared\obj\Debug\net8.0\TransportManager.ApplicationServices.Shared.sourcelink.json
+C:\Users\marqu\source\repos\CRUD12_JENNIFER_RIOS\TransportManager.Web\TransportManager.ApplicationServices.Shared\obj\Debug\net8.0\TransportManager.ApplicationServices.Shared.dll
+C:\Users\marqu\source\repos\CRUD12_JENNIFER_RIOS\TransportManager.Web\TransportManager.ApplicationServices.Shared\obj\Debug\net8.0\refint\TransportManager.ApplicationServices.Shared.dll
+C:\Users\marqu\source\repos\CRUD12_JENNIFER_RIOS\TransportManager.Web\TransportManager.ApplicationServices.Shared\obj\Debug\net8.0\TransportManager.ApplicationServices.Shared.pdb
+C:\Users\marqu\source\repos\CRUD12_JENNIFER_RIOS\TransportManager.Web\TransportManager.ApplicationServices.Shared\obj\Debug\net8.0\ref\TransportManager.ApplicationServices.Shared.dll

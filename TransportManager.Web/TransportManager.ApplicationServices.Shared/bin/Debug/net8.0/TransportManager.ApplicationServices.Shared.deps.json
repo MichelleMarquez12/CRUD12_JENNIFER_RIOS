@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "TransportManager.ApplicationServices.Shared/1.0.0": {
+        "runtime": {
+          "TransportManager.ApplicationServices.Shared.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "TransportManager.ApplicationServices.Shared/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
