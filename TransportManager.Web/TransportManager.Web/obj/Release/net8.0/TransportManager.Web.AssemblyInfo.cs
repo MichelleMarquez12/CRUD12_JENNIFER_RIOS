@@ -11,12 +11,10 @@
 using System;
 using System.Reflection;
 
-[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
-[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("fa351b99-e196-4e43-bf83-34c02d702ec2")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("TransportManager.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ac645d1469047fb165be53672a1164318996ea36")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0abfd1ad90e6174adf008b40c6a38b196c461861")]
 [assembly: System.Reflection.AssemblyProductAttribute("TransportManager.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TransportManager.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,0 +1,12 @@
+C:\Users\marqu\source\repos\CRUD12_JENNIFER_RIOS\TransportManager.Web\TransportManager.Web.Shared\bin\Debug\net8.0\TransportManager.Web.Shared.deps.json
+C:\Users\marqu\source\repos\CRUD12_JENNIFER_RIOS\TransportManager.Web\TransportManager.Web.Shared\bin\Debug\net8.0\TransportManager.Web.Shared.dll
+C:\Users\marqu\source\repos\CRUD12_JENNIFER_RIOS\TransportManager.Web\TransportManager.Web.Shared\bin\Debug\net8.0\TransportManager.Web.Shared.pdb
+C:\Users\marqu\source\repos\CRUD12_JENNIFER_RIOS\TransportManager.Web\TransportManager.Web.Shared\obj\Debug\net8.0\TransportManager.Web.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\marqu\source\repos\CRUD12_JENNIFER_RIOS\TransportManager.Web\TransportManager.Web.Shared\obj\Debug\net8.0\TransportManager.Web.Shared.AssemblyInfoInputs.cache
+C:\Users\marqu\source\repos\CRUD12_JENNIFER_RIOS\TransportManager.Web\TransportManager.Web.Shared\obj\Debug\net8.0\TransportManager.Web.Shared.AssemblyInfo.cs
+C:\Users\marqu\source\repos\CRUD12_JENNIFER_RIOS\TransportManager.Web\TransportManager.Web.Shared\obj\Debug\net8.0\TransportManager.Web.Shared.csproj.CoreCompileInputs.cache
+C:\Users\marqu\source\repos\CRUD12_JENNIFER_RIOS\TransportManager.Web\TransportManager.Web.Shared\obj\Debug\net8.0\TransportManager.Web.Shared.sourcelink.json
+C:\Users\marqu\source\repos\CRUD12_JENNIFER_RIOS\TransportManager.Web\TransportManager.Web.Shared\obj\Debug\net8.0\TransportManager.Web.Shared.dll
+C:\Users\marqu\source\repos\CRUD12_JENNIFER_RIOS\TransportManager.Web\TransportManager.Web.Shared\obj\Debug\net8.0\refint\TransportManager.Web.Shared.dll
+C:\Users\marqu\source\repos\CRUD12_JENNIFER_RIOS\TransportManager.Web\TransportManager.Web.Shared\obj\Debug\net8.0\TransportManager.Web.Shared.pdb
+C:\Users\marqu\source\repos\CRUD12_JENNIFER_RIOS\TransportManager.Web\TransportManager.Web.Shared\obj\Debug\net8.0\ref\TransportManager.Web.Shared.dll

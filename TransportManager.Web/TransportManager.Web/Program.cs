@@ -1,8 +1,21 @@
-using TransportManager.ApplicationServices.Transport;
-using TransportManager.DataAccess;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Serilog;
+using System.Text;
+using TransportManager.ApplicationServices.Transport;
+using TransportManager.Core.Transports;
+using TransportManager.DataAccess;
+using TransportManager.DataAccess.Repositories;
+using TransportManager.Web;
+using TransportManager.Web.Auth;
+using TransportManager.Web.Controllers;
+using TransportManager.Web.Data;
+using TransportManager.Web.Shared.Config;
 
 namespace Program
 {
@@ -28,57 +41,140 @@ namespace Program
                     mySqlOptions.EnableRetryOnFailure();
                 }));
 
-            builder.Services.AddRazorPages();
-            builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
-            builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
+            var connectionStrings = builder.Configuration.GetConnectionString("Jwt");
 
+            builder.Services.AddDbContext<JwtDbContext>(options => options.UseMySql(connectionStrings, ServerVersion.AutoDetect(connectionStrings)));
+
+            builder.Services.AddIdentity<IdentityUser, IdentityRole>(
+            opts =>
+            {
+                opts.Password.RequireDigit = true;
+                opts.Password.RequireLowercase = true;
+                opts.Password.RequireUppercase = true;
+                opts.Password.RequireNonAlphanumeric = true;
+                opts.Password.RequiredLength = 7;
+                opts.Password.RequiredUniqueChars = 4;
+            }).AddEntityFrameworkStores<JwtDbContext>().AddDefaultTokenProviders();
+
+
+
+            builder.Services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Transport Manager API", Version = "v1" });
+            });
+
+            builder.Services.AddHttpClient();
+            builder.Services.AddScoped<Checker>();
             // Register services and repositories
             builder.Services.AddScoped<IJourneyAppService, JourneyAppService>();
             builder.Services.AddScoped<IPassengerAppService, PassengerAppService>();
             builder.Services.AddScoped<ITicketAppService, TicketAppService>();
+            
 
-            // Add Swagger services
-            builder.Services.AddSwaggerGen(c =>
+            builder.Services.AddScoped<IRepository<int, JourneyDto>, Repository<int, JourneyDto>>();
+            builder.Services.AddScoped<IRepository<int, PassengerDto>, Repository<int, PassengerDto>>();
+            builder.Services.AddScoped<IRepository<int, TicketDto>, Repository<int, TicketDto>>();
+
+            builder.Services.AddAutoMapper(typeof(TransportManager.ApplicationServices.MapperProfile));
+            builder.Services.AddControllers();
+
+            builder.Services.Configure<JwtTokenValidationSettings>(builder.Configuration.GetSection("JwTokenValidationSettings"));
+
+            builder.Services.AddTransient<IJwtIssuerOptions, JwtIssuerFactory>();
+
+            Log.Logger = new LoggerConfiguration()
+                .MinimumLevel.Verbose()
+                .WriteTo.MySQL(connectionString, tableName: "logging")
+                .CreateLogger();
+
+            builder.Services.AddSwaggerGen(option =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo
+                option.AddSecurityDefinition(JwtBearerDefaults.AuthenticationScheme, new OpenApiSecurityScheme
                 {
-                    Version = "v1",
-                    Title = "Transport Manager API",
-                    Description = "API documentation for Transport Manager"
+                    Description = "JWT Authorization header using the Bearer scheme. \r\n\r\n  Enter your token in the text input below. \r\n",
+                    In = ParameterLocation.Header,
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.ApiKey,
+                    BearerFormat = "JWT",
+                    Scheme = JwtBearerDefaults.AuthenticationScheme
+                }
+                );
+
+                option.AddSecurityRequirement(new OpenApiSecurityRequirement()
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = JwtBearerDefaults.AuthenticationScheme
+                            }
+                        },
+                        new string[]{}
+                    }
                 });
+            });
+
+            var tokenValidationSettings = builder.Services.BuildServiceProvider().GetService<IOptions<JwtTokenValidationSettings>>().Value;
+
+            builder.Services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(options =>
+            {
+                options.RequireHttpsMetadata = false;
+                options.SaveToken = true;
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidIssuer = tokenValidationSettings.ValidIssuer,
+                    ValidAudience = tokenValidationSettings.ValidAudience,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(tokenValidationSettings.SecretKey)),
+                    ClockSkew = TimeSpan.Zero
+                };
             });
 
             var app = builder.Build();
 
-            // Enable middleware to serve generated Swagger as a JSON endpoint.
-            app.UseSwagger();
-
-            app.UseSwaggerUI(c =>
+            if (app.Environment.IsDevelopment())
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Transport Manager API V1");
-                c.RoutePrefix = string.Empty; // Set Swagger UI at app's root
+                app.UseSwagger();
+                app.UseSwaggerUI(c =>
+                {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "API v1");
+                    c.RoutePrefix = string.Empty; // Para servir Swagger UI en la raíz
+                });
+            }
+
+            app.Use(async (context, next) =>
+            {
+                try
+                {
+                    await next.Invoke();
+                }
+                catch (Exception ex)
+                {
+                    Log.Error(ex, "Unhandled exception");
+                    throw;
+                }
             });
 
+            app.InitDb();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
+            app.UseStaticFiles();
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
-
-                endpoints.MapControllerRoute(
-                    name: "error",
-                    pattern: "/Error",
-                    defaults: new { controller = "Error", action = "Error" });
+                endpoints.MapControllers();
             });
 
-            app.MapRazorPages();
-            app.UseStaticFiles();
             app.Run();
         }
     }

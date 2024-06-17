@@ -8,11 +8,13 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="11.0.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\TransportManager.DataAccess\TransportManager.DataAccess.csproj" />
+    <ProjectReference Include="..\TransportManager.ApplicationServices.Shared\TransportManager.ApplicationServices.Shared.csproj" />
     <ProjectReference Include="..\TransportManager.Core\TransportManager.Core.csproj" />
+    <ProjectReference Include="..\TransportManager.DataAccess\TransportManager.DataAccess.csproj" />
   </ItemGroup>
 
 </Project>
