@@ -1,0 +1,44 @@
+name: dockercompose14236134049084152283
+services:
+  transportmanager.web:
+    build:
+      context: C:\Users\marqu\source\repos\CRUD12_JENNIFER_RIOS\TransportManager.Web
+      dockerfile: TransportManager.Web/Dockerfile
+    container_name: transportmanager-DB
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTP_PORTS: "8080"
+      ASPNETCORE_HTTPS_PORTS: "8081"
+      DB_HOST: ' transportmanager-db'
+      DB_NAME: transportmanager
+      DB_ROOT: _PASSWORD=ElfenSnow1212
+    image: transportmanagerweb
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 3306
+        published: "5024"
+        protocol: tcp
+      - mode: ingress
+        target: 8080
+        protocol: tcp
+      - mode: ingress
+        target: 8081
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: C:\Users\marqu\AppData\Roaming/Microsoft/UserSecrets
+        target: /home/app/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\marqu\AppData\Roaming/ASP.NET/Https
+        target: /home/app/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+networks:
+  default:
+    name: dockercompose14236134049084152283_default

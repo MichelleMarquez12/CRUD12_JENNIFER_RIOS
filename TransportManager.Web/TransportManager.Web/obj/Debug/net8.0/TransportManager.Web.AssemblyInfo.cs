@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("de918c89-17e2-42c3-96da-6b44c6136cdc")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("TransportManager.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0abfd1ad90e6174adf008b40c6a38b196c461861")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3a0908dc9f78c01549b0ce5aabf02dd6fce0eba7")]
 [assembly: System.Reflection.AssemblyProductAttribute("TransportManager.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TransportManager.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

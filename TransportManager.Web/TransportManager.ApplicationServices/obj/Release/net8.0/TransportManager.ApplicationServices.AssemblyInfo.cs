@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TransportManager.ApplicationServices")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0abfd1ad90e6174adf008b40c6a38b196c461861")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3a0908dc9f78c01549b0ce5aabf02dd6fce0eba7")]
 [assembly: System.Reflection.AssemblyProductAttribute("TransportManager.ApplicationServices")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TransportManager.ApplicationServices")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,10 +1,6 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\marqu\\source\\repos\\CRUD12_JENNIFER_RIOS\\TransportManager.Web\\TransportManager.Web\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\TransportManager.Web.bundle.scp.css",
-      "PackagePath": "staticwebassets\\TransportManager.Web.bundle.scp.css"
-    },
-    {
       "Id": "C:\\Users\\marqu\\source\\repos\\CRUD12_JENNIFER_RIOS\\TransportManager.Web\\TransportManager.Web\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

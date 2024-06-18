@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TransportManager.Applicatio
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TransportManager.UnitTest", "TransportManager.UnitTest\TransportManager.UnitTest.csproj", "{194F92E4-FC20-4E28-8531-7FCFB0392DC4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransportManager.Web.Shared", "TransportManager.Web.Shared\TransportManager.Web.Shared.csproj", "{BDD97FC2-82E6-46C6-9A03-C744141663BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TransportManager.Web.Shared", "TransportManager.Web.Shared\TransportManager.Web.Shared.csproj", "{BDD97FC2-82E6-46C6-9A03-C744141663BA}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{76BD8FD0-7BA7-473E-8C3A-52A573FFD92A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{BDD97FC2-82E6-46C6-9A03-C744141663BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BDD97FC2-82E6-46C6-9A03-C744141663BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BDD97FC2-82E6-46C6-9A03-C744141663BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76BD8FD0-7BA7-473E-8C3A-52A573FFD92A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76BD8FD0-7BA7-473E-8C3A-52A573FFD92A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76BD8FD0-7BA7-473E-8C3A-52A573FFD92A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76BD8FD0-7BA7-473E-8C3A-52A573FFD92A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

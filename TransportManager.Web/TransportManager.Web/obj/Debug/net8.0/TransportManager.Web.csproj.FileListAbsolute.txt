@@ -164,7 +164,3 @@ C:\Users\marqu\source\repos\CRUD12_JENNIFER_RIOS\TransportManager.Web\TransportM
 C:\Users\marqu\source\repos\CRUD12_JENNIFER_RIOS\TransportManager.Web\TransportManager.Web\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
 C:\Users\marqu\source\repos\CRUD12_JENNIFER_RIOS\TransportManager.Web\TransportManager.Web\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\marqu\source\repos\CRUD12_JENNIFER_RIOS\TransportManager.Web\TransportManager.Web\bin\Debug\net8.0\TransportManager.Web.staticwebassets.runtime.json
-C:\Users\marqu\source\repos\CRUD12_JENNIFER_RIOS\TransportManager.Web\TransportManager.Web\obj\Debug\net8.0\TransportManager.Web.RazorAssemblyInfo.cache
-C:\Users\marqu\source\repos\CRUD12_JENNIFER_RIOS\TransportManager.Web\TransportManager.Web\obj\Debug\net8.0\TransportManager.Web.RazorAssemblyInfo.cs
-C:\Users\marqu\source\repos\CRUD12_JENNIFER_RIOS\TransportManager.Web\TransportManager.Web\obj\Debug\net8.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
-C:\Users\marqu\source\repos\CRUD12_JENNIFER_RIOS\TransportManager.Web\TransportManager.Web\obj\Debug\net8.0\scopedcss\projectbundle\TransportManager.Web.bundle.scp.css

@@ -139,6 +139,8 @@ namespace Program
 
             var app = builder.Build();
 
+            //app.Urls.Add("http://*:5024");
+
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();

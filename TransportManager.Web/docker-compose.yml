@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  transportmanager.web:
+    container_name: transportmanager-DB
+    image: ${DOCKER_REGISTRY-}transportmanagerweb
+    build:
+      context: .
+      dockerfile: TransportManager.Web/Dockerfile
+    ports:
+      - 5024:3306
+    environment:
+      - DB_HOST= transportmanager-db
+      - DB_NAME=transportmanager
+      - DB_ROOT=_PASSWORD=ElfenSnow1212
